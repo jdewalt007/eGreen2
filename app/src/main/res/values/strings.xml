@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">e-Green2</string>
+    <string name="action_settings">Settings</string>
+    <string name="Daily_Com_Hint">Enter daily commute</string>
+    <string name="An_Mil_Hint">Enter annual mileage</string>
+    <string name="Month_Inc_hint">Enter monthly income</string>
+    <string name="Down_Paym_Hint">Enter down payment</string>
+    <string name="select_EV">SELECT AN EV</string>
+    <string name="BMW_i3_EV">2017 BMW-i3</string>
+    <string name="Chevy_Bolt_EV">2017 Chevy Bolt</string>
+    <string name="ford_focus_ev">2017 Ford Focus EV</string>
+    <string name="Fiat_500e">2017 Fiat 500e</string>
+
+
+    <string name="first_ev_imageB">First EV Image</string>
+    <string name="first_ev_textV">First EV textView</string>
+    <string name="second_ev_imageB">Second EV Image</string>
+    <string name="second_ev_textV">Second EV textView</string>
+    <string name="third_ev_imageB">Third EV Image</string>
+    <string name="third_ev_textV">Third EV textView</string>
+    <string name="fourth_ev_imageB">Fourth EV Image</string>
+    <string name="fourth_ev_textV">Fourth EV textView</string>
+
+
+
+</resources>

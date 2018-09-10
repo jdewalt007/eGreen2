@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/TextView"
+        style="@style/selectEVtextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/bottom_padding"
+        android:text="@string/select_EV"
+        android:textStyle="bold" />
+
+    <ScrollView
+        style="@style/selectEVtextview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <ImageButton
+                android:id="@+id/imageButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_margin"
+                android:background="@drawable/image_border"
+                android:contentDescription="@string/first_ev_imageB"
+                android:padding="@dimen/all_padding"
+                android:scaleType="centerInside"
+
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/image_border"
+                android:contentDescription="@string/second_ev_imageB"
+                android:padding="@dimen/all_padding"
+                android:scaleType="centerInside"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/first_ev_textV"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+
+                android:textSize="@dimen/font_size"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="161dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/second_ev_textV"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/font_size"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/start_margin"
+                android:layout_marginTop="@dimen/top_margin"
+                android:background="@drawable/image_border"
+                android:contentDescription="@string/third_ev_imageB"
+                android:padding="@dimen/all_padding"
+                android:scaleType="centerInside"
+                android:visibility="gone" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="@dimen/top_margin"
+                android:background="@drawable/image_border"
+                android:contentDescription="@string/fourth_ev_imageB"
+                android:padding="@dimen/all_padding"
+                android:scaleType="centerInside"
+                android:visibility="gone"  />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/third_ev_textV"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/top_padding"
+                android:textSize="@dimen/font_size"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="162dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:contentDescription="@string/fourth_ev_textV"
+                android:fontFamily="monospace"
+                android:gravity="center_horizontal"
+                android:paddingTop="@dimen/top_padding"
+                android:textSize="@dimen/font_size"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+        </GridLayout>
+    </ScrollView>
+
+</LinearLayout>
