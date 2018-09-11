@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,14 +20,18 @@ import java.util.List;;
 
 
 public class MainActivity extends AppCompatActivity
-        implements UserInfo.UserInfoFragmentListener {
+        implements UserInfo.UserInfoFragmentListener, SelectEV.SelectEvFragmentListener {
 
 
     private UserInfo userInfo;  // UserInfo fragment variable
     private SelectEV select_ev;  // SelectEV fragment variable
     private int car_pairs_total;
     private EV [] ev_array;
+    private GPV [] gpv_array;
     private FragmentManager fm;
+    private EV ev_selected;
+    private GPV gpv_paired;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +78,7 @@ public class MainActivity extends AppCompatActivity
                     getSupportFragmentManager().beginTransaction();
             transaction.replace(viewID, select_ev);
             ev_array = userInfo.ev_array;
+            gpv_array = userInfo.gpv_array;
             transaction.addToBackStack(null);
             transaction.commit(); // causes SelectEV fragment to display
             //FragmentManager fm = getFragmentManager();
@@ -82,12 +88,47 @@ public class MainActivity extends AppCompatActivity
             fm = getSupportFragmentManager();
             fm.executePendingTransactions();
 
-            select_ev.displayEVs(ev_array, car_pairs_total);
+            select_ev.displayEVs(ev_array, car_pairs_total, gpv_array);
 
 
             // figure out which EV's stored in userInfo.ev_array and display
 
         }
+    }
+
+    @Override
+    public void onEvSelected ( EV ev, GPV gpv ) {
+
+            ev_selected = ev;
+            gpv_paired = gpv;
+
+            passEV_GPV( R.id.fragmentContainer);
+
+    }
+
+
+
+    private void passEV_GPV(int viewID)  {
+
+        Log.e("passEV_GPV","EV name = " + ev_selected.getName());
+        Log.e("passEV_GPV","GPV name = " + gpv_paired.getName());
+
+
+        /*  Charles here is where you create instantiate your DisplayResults fragment
+
+            displayResults = new DisplayResults();
+             FragmentTransaction transaction =
+                    getSupportFragmentManager().beginTransaction();
+            transaction.replace(viewID, displayResults);
+            transaction.addToBackStack(null);
+            transaction.commit();
+            fm.executePendingTransactions();
+            displayResults.calc(ev_selected, gpv_paired, consumer);  consumer is the user Object
+
+            you can manipulate a calculations object that you create within
+            this displayResults fragment
+
+      */
 
     }
 
