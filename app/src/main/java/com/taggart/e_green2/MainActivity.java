@@ -81,17 +81,10 @@ public class MainActivity extends AppCompatActivity
             gpv_array = userInfo.gpv_array;
             transaction.addToBackStack(null);
             transaction.commit(); // causes SelectEV fragment to display
-            //FragmentManager fm = getFragmentManager();
-            //fm.executePendingTransactions();
-            //fm = getSupportFragmentManager();
-            //fm.executePendingTransactions();
             fm = getSupportFragmentManager();
-            fm.executePendingTransactions();
+            fm.executePendingTransactions();  // forces onCreate for SelectEV to execute
 
             select_ev.displayEVs(ev_array, car_pairs_total, gpv_array);
-
-
-            // figure out which EV's stored in userInfo.ev_array and display
 
         }
     }

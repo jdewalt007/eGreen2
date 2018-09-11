@@ -16,7 +16,7 @@ public class SelectEV extends Fragment {
     // callback method implemented by MainActivity
     public interface SelectEvFragmentListener {
 
-        // called after EV Search function completes
+        // called after User clicks on an EV
         void onEvSelected(EV ev, GPV gpv);
 
     }
@@ -24,14 +24,19 @@ public class SelectEV extends Fragment {
     private SelectEvFragmentListener listener;
 
 
-    ImageButton imageButton1;
-    TextView textView1;
-    ImageButton imageButton2;
-    TextView textView2;
-    ImageButton imageButton3;
-    TextView textView3;
-    ImageButton imageButton4;
-    TextView textView4;
+    ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6,
+            imageButton7, imageButton8, imageButton9, imageButton10, imageButton11, imageButton12,
+            imageButton13, imageButton14, imageButton15, imageButton16, imageButton17, imageButton18,
+            imageButton19, imageButton20, imageButton21, imageButton22;
+
+    TextView textView1, textView2, textView3, textView4, textView5, textView6, textView7,
+            textView8, textView9, textView10, textView11, textView12, textView13, textView14,
+            textView15, textView16, textView17, textView18, textView19, textView20, textView21,
+            textView22;
+
+
+
+
 
 
 
@@ -55,9 +60,18 @@ public class SelectEV extends Fragment {
         textView3 = (TextView) view.findViewById(R.id.textView3);
         imageButton4 = (ImageButton) view.findViewById(R.id.imageButton4);
         textView4 = (TextView) view.findViewById(R.id.textView4);
-
-
-
+        imageButton5 = (ImageButton) view.findViewById(R.id.imageButton5);
+        textView5 = (TextView) view.findViewById(R.id.textView5);
+        imageButton6 = (ImageButton) view.findViewById(R.id.imageButton6);
+        textView6 = (TextView) view.findViewById(R.id.textView6);
+        imageButton7 = (ImageButton) view.findViewById(R.id.imageButton7);
+        textView7 = (TextView) view.findViewById(R.id.textView7);
+        imageButton8 = (ImageButton) view.findViewById(R.id.imageButton8);
+        textView8 = (TextView) view.findViewById(R.id.textView8);
+        imageButton9 = (ImageButton) view.findViewById(R.id.imageButton9);
+        textView9 = (TextView) view.findViewById(R.id.textView9);
+        imageButton10 = (ImageButton) view.findViewById(R.id.imageButton10);
+        textView10 = (TextView) view.findViewById(R.id.textView10);
 
 
         return view;
@@ -83,8 +97,16 @@ public class SelectEV extends Fragment {
 
     public void displayEVs(EV [] ev_array, int car_pairs_total, GPV [] gpv_array) {
 
-        ImageButton [] imagebuttons = {imageButton1, imageButton2,imageButton3, imageButton4};
-        TextView [] textviews = {textView1, textView2, textView3, textView4};
+        ImageButton [] imagebuttons = {imageButton1, imageButton2,imageButton3, imageButton4,
+        imageButton5, imageButton6, imageButton7, imageButton8, imageButton9, imageButton10};
+
+
+
+        TextView [] textviews = {textView1, textView2, textView3, textView4, textView5, textView6,
+        textView7, textView8, textView9, textView10};
+
+
+
 
 
         for (int i = 0; i < car_pairs_total; i++) {
@@ -101,8 +123,8 @@ public class SelectEV extends Fragment {
                             final EV bmw_i3 = ev_array[i];
                             final GPV vw_beetle = gpv_array[ev_array[i].getId()];
 
-                            ImageButton bmw_i3ImageButton = imagebuttons[i];
-                            bmw_i3ImageButton.setOnClickListener(new View.OnClickListener() {
+                            ImageButton imageButton = imagebuttons[i];
+                            imageButton.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                    listener.onEvSelected(bmw_i3, vw_beetle);
@@ -123,9 +145,9 @@ public class SelectEV extends Fragment {
                             final EV chevy_bolt = ev_array[i];
                             final GPV chevy_sonic = gpv_array[ev_array[i].getId()];
 
-                            ImageButton chevy_boltImageButton = imagebuttons[i];
+                            ImageButton imageButton = imagebuttons[i];
 
-                            chevy_boltImageButton.setOnClickListener(new View.OnClickListener() {
+                            imageButton.setOnClickListener(new View.OnClickListener() {
                                  @Override
                                  public void onClick(View v) {
                                       listener.onEvSelected(chevy_bolt, chevy_sonic);
@@ -146,14 +168,15 @@ public class SelectEV extends Fragment {
                             final EV fiat_500e = ev_array[i];
                             final GPV fiat_500 = gpv_array[ev_array[i].getId()];
 
-                            ImageButton fiat_500eImageButton = imagebuttons[i];
+                            ImageButton imageButton = imagebuttons[i];
 
-                            fiat_500eImageButton.setOnClickListener(new View.OnClickListener() {
+                            imageButton.setOnClickListener(new View.OnClickListener() {
                                  @Override
                                  public void onClick(View v) {
                                       listener.onEvSelected(fiat_500e, fiat_500);
                                  }
                             });
+
                             continue;
                 }
 
@@ -167,9 +190,9 @@ public class SelectEV extends Fragment {
                             final EV ford_focus_ev = ev_array[i];
                             final GPV ford_focus_st = gpv_array[ev_array[i].getId()];
 
-                            ImageButton ford_focus_evImageButton = imagebuttons[i];
+                            ImageButton imageButton = imagebuttons[i];
 
-                            ford_focus_evImageButton.setOnClickListener(new View.OnClickListener() {
+                            imageButton.setOnClickListener(new View.OnClickListener() {
                                  @Override
                                  public void onClick(View v) {
                                       listener.onEvSelected(ford_focus_ev, ford_focus_st);
@@ -178,6 +201,136 @@ public class SelectEV extends Fragment {
 
                             continue;
                 }
+
+                case 4: {
+                    imagebuttons[i].setImageResource(R.drawable.hyundai_ioniq);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Hyundai_Ioniq);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV hyundai_ioniq = ev_array[i];
+                    final GPV hyundai_sonata = gpv_array[ev_array[i].getId()];
+
+                    ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onEvSelected(hyundai_ioniq, hyundai_sonata);
+                        }
+                    });
+
+                    continue;
+                }
+
+
+                case 5: {
+                    imagebuttons[i].setImageResource(R.drawable.kia_soul_ev);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Kia_Soul_EV);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV kia_soul_ev = ev_array[i];
+                    final GPV kia_soul_auto = gpv_array[ev_array[i].getId()];
+
+                    ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onEvSelected(kia_soul_ev,kia_soul_auto);
+                        }
+                    });
+
+                    continue;
+                }
+
+
+                case 6: {
+                    imagebuttons[i].setImageResource(R.drawable.mercedes_b_250e);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Mercedes_B_250e);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV mercedes_B250e = ev_array[i];
+                    final GPV mercedes_GLA = gpv_array[ev_array[i].getId()];
+
+                    ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onEvSelected(mercedes_B250e, mercedes_GLA);
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 7: {
+                    imagebuttons[i].setImageResource(R.drawable.mitsubishi_i_miev);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Mitsubishi_i_MiEV);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV mitsubishi_i_miev = ev_array[i];
+                    final GPV mitsubishi_mirage = gpv_array[ev_array[i].getId()];
+
+                    ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onEvSelected(mitsubishi_i_miev, mitsubishi_mirage);
+                        }
+                    });
+
+                    continue;
+                }
+
+
+                case 8: {
+                    imagebuttons[i].setImageResource(R.drawable.nissan_leaf);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Nissan_Leaf);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV nissan_leaf = ev_array[i];
+                    final GPV vw_golf_gti = gpv_array[ev_array[i].getId()];
+
+                    ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onEvSelected(nissan_leaf, vw_golf_gti);
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 9: {
+                    imagebuttons[i].setImageResource(R.drawable.smart_ev);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Smart_EV);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV smart_ev = ev_array[i];
+                    final GPV smart_cabriolet = gpv_array[ev_array[i].getId()];
+
+                    ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            listener.onEvSelected(smart_ev, smart_cabriolet);
+                        }
+                    });
+
+                    continue;
+                }
+
 
                 default:
                             continue;

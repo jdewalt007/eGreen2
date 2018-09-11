@@ -5,21 +5,50 @@
     <string name="An_Mil_Hint">Enter annual mileage</string>
     <string name="Month_Inc_hint">Enter monthly income</string>
     <string name="Down_Paym_Hint">Enter down payment</string>
+
+
     <string name="select_EV">SELECT AN EV</string>
     <string name="BMW_i3_EV">2017 BMW-i3</string>
     <string name="Chevy_Bolt_EV">2017 Chevy Bolt</string>
     <string name="ford_focus_ev">2017 Ford Focus EV</string>
     <string name="Fiat_500e">2017 Fiat 500e</string>
+    <string name="Hyundai_Ioniq">2017 Hyundai Ioniq</string>
+    <string name="Kia_Soul_EV">2017 Kia Soul EV</string>
+    <string name="Mercedes_B_250e">2017 Mercedes B-250e</string>
+    <string name="Mitsubishi_i_MiEV">2017 Mitsubishi i-MiEV</string>
+    <string name="Nissan_Leaf">2017 Nissan Leaf</string>
+    <string name="Smart_EV">2017 Smart EV</string>
 
 
     <string name="first_ev_imageB">First EV Image</string>
     <string name="first_ev_textV">First EV textView</string>
+
     <string name="second_ev_imageB">Second EV Image</string>
     <string name="second_ev_textV">Second EV textView</string>
+
     <string name="third_ev_imageB">Third EV Image</string>
     <string name="third_ev_textV">Third EV textView</string>
+
     <string name="fourth_ev_imageB">Fourth EV Image</string>
     <string name="fourth_ev_textV">Fourth EV textView</string>
+
+    <string name="fifth_ev_imageB">Fifth EV Image</string>
+    <string name="fifth_ev_textV">Fifth EV textView</string>
+
+    <string name="sixth_ev_imageB">Sixth EV Image</string>
+    <string name="sixth_ev_textV">Sixth EV textView</string>
+
+    <string name="seventh_ev_imageB">Seventh EV Image</string>
+    <string name="seventh_ev_textV">Seventh EV textView</string>
+
+    <string name="eighth_ev_imageB">Eighth EV Image</string>
+    <string name="eighth_ev_textV">Eighth EV textView</string>
+
+    <string name="ninth_ev_imageB">Ninth EV Image</string>
+    <string name="ninth_ev_textV">Ninth EV textView</string>
+
+    <string name="tenth_ev_imageB">Tenth EV Image</string>
+    <string name="tenth_ev_textV">Tenth EV textView</string>
 
 
 
