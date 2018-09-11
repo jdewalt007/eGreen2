@@ -1,11 +1,14 @@
 package com.taggart.e_green2;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,6 +25,18 @@ public class SelectEV extends Fragment {
     }
 
     private SelectEvFragmentListener listener;
+    private Button select_ev_continueButton;
+    private boolean ev_selected = false;
+    private EV current_ev_selected;
+    private GPV current_gpv_selected;
+    private ImageButton current_image_button_selected;
+    private GradientDrawable drawable;
+    private GradientDrawable drawable2;
+    private GradientDrawable drawable3;
+
+
+
+
 
 
     ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6,
@@ -33,10 +48,6 @@ public class SelectEV extends Fragment {
             textView8, textView9, textView10, textView11, textView12, textView13, textView14,
             textView15, textView16, textView17, textView18, textView19, textView20, textView21,
             textView22;
-
-
-
-
 
 
 
@@ -73,6 +84,21 @@ public class SelectEV extends Fragment {
         imageButton10 = (ImageButton) view.findViewById(R.id.imageButton10);
         textView10 = (TextView) view.findViewById(R.id.textView10);
 
+        select_ev_continueButton = (Button) view.findViewById(R.id.selectEVcontinueButton);
+        select_ev_continueButton.setEnabled(false);
+
+
+
+
+        select_ev_continueButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                select_ev_continueButton.setBackground(drawable3);
+                listener.onEvSelected(current_ev_selected, current_gpv_selected);
+            }
+        });
+
 
         return view;
     }
@@ -86,12 +112,28 @@ public class SelectEV extends Fragment {
         listener = (SelectEvFragmentListener) context;
     }
 
+
     // remove SelectEvFragmentListener when fragment detached
     @Override
     public void onDetach() {
         super.onDetach();
         listener = null;
     }
+
+
+
+
+
+
+    private void setCurrentEvGpvSelection(ImageButton button_selected, EV ev_clicked, GPV gpv_sent)  {
+
+
+        current_ev_selected = ev_clicked;
+        current_gpv_selected = gpv_sent;
+        current_image_button_selected = button_selected;
+
+    }
+
 
 
 
@@ -104,6 +146,27 @@ public class SelectEV extends Fragment {
 
         TextView [] textviews = {textView1, textView2, textView3, textView4, textView5, textView6,
         textView7, textView8, textView9, textView10};
+
+
+
+
+
+
+        drawable = new GradientDrawable();
+        drawable.setShape(GradientDrawable.RECTANGLE);
+        drawable.setStroke(6, Color.MAGENTA);
+        drawable.setColor(Color.BLACK);
+
+        drawable2 = new GradientDrawable();
+        drawable2.setShape(GradientDrawable.RECTANGLE);
+        drawable2.setStroke(6, Color.BLACK);
+        drawable2.setColor(Color.BLACK);
+
+        drawable3 = new GradientDrawable();
+        drawable3.setShape(GradientDrawable.RECTANGLE);
+        drawable3.setStroke(6, Color.MAGENTA);
+        drawable3.setColor(Color.WHITE);
+
 
 
 
@@ -123,11 +186,24 @@ public class SelectEV extends Fragment {
                             final EV bmw_i3 = ev_array[i];
                             final GPV vw_beetle = gpv_array[ev_array[i].getId()];
 
-                            ImageButton imageButton = imagebuttons[i];
+                            final ImageButton imageButton = imagebuttons[i];
                             imageButton.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                   listener.onEvSelected(bmw_i3, vw_beetle);
+
+                                    if (ev_selected == false)  {
+
+                                        ev_selected = true;
+                                        select_ev_continueButton.setEnabled(true);
+                                        imageButton.setBackground(drawable);
+                                        setCurrentEvGpvSelection(imageButton, bmw_i3, vw_beetle);
+                                    }
+                                    else {
+
+                                        current_image_button_selected.setBackground(drawable2);
+                                        imageButton.setBackground(drawable);
+                                        setCurrentEvGpvSelection(imageButton, bmw_i3, vw_beetle);
+                                    }
                                 }
                             });
 
@@ -145,12 +221,25 @@ public class SelectEV extends Fragment {
                             final EV chevy_bolt = ev_array[i];
                             final GPV chevy_sonic = gpv_array[ev_array[i].getId()];
 
-                            ImageButton imageButton = imagebuttons[i];
+                            final ImageButton imageButton = imagebuttons[i];
 
                             imageButton.setOnClickListener(new View.OnClickListener() {
                                  @Override
                                  public void onClick(View v) {
-                                      listener.onEvSelected(chevy_bolt, chevy_sonic);
+
+                                     if (ev_selected == false)  {
+
+                                         ev_selected = true;
+                                         select_ev_continueButton.setEnabled(true);
+                                         imageButton.setBackground(drawable);
+                                         setCurrentEvGpvSelection(imageButton, chevy_bolt, chevy_sonic);
+                                     }
+                                     else {
+
+                                         current_image_button_selected.setBackground(drawable2);
+                                         imageButton.setBackground(drawable);
+                                         setCurrentEvGpvSelection(imageButton, chevy_bolt, chevy_sonic);
+                                     }
                                  }
                             });
 
@@ -168,12 +257,26 @@ public class SelectEV extends Fragment {
                             final EV fiat_500e = ev_array[i];
                             final GPV fiat_500 = gpv_array[ev_array[i].getId()];
 
-                            ImageButton imageButton = imagebuttons[i];
+                            final ImageButton imageButton = imagebuttons[i];
 
                             imageButton.setOnClickListener(new View.OnClickListener() {
                                  @Override
                                  public void onClick(View v) {
-                                      listener.onEvSelected(fiat_500e, fiat_500);
+
+                                     if (ev_selected == false)  {
+
+                                         ev_selected = true;
+                                         select_ev_continueButton.setEnabled(true);
+                                         imageButton.setBackground(drawable);
+                                         setCurrentEvGpvSelection(imageButton, fiat_500e, fiat_500);
+                                     }
+                                     else {
+
+                                         current_image_button_selected.setBackground(drawable2);
+                                         imageButton.setBackground(drawable);
+                                         setCurrentEvGpvSelection(imageButton, fiat_500e, fiat_500);
+                                     }
+
                                  }
                             });
 
@@ -190,12 +293,25 @@ public class SelectEV extends Fragment {
                             final EV ford_focus_ev = ev_array[i];
                             final GPV ford_focus_st = gpv_array[ev_array[i].getId()];
 
-                            ImageButton imageButton = imagebuttons[i];
+                            final ImageButton imageButton = imagebuttons[i];
 
                             imageButton.setOnClickListener(new View.OnClickListener() {
                                  @Override
                                  public void onClick(View v) {
-                                      listener.onEvSelected(ford_focus_ev, ford_focus_st);
+
+                                     if (ev_selected == false)  {
+
+                                         ev_selected = true;
+                                         select_ev_continueButton.setEnabled(true);
+                                         imageButton.setBackground(drawable);
+                                         setCurrentEvGpvSelection(imageButton, ford_focus_ev, ford_focus_st);
+                                     }
+                                     else {
+
+                                         current_image_button_selected.setBackground(drawable2);
+                                         imageButton.setBackground(drawable);
+                                         setCurrentEvGpvSelection(imageButton, ford_focus_ev, ford_focus_st);
+                                     }
                                  }
                             });
 
@@ -211,12 +327,25 @@ public class SelectEV extends Fragment {
                     final EV hyundai_ioniq = ev_array[i];
                     final GPV hyundai_sonata = gpv_array[ev_array[i].getId()];
 
-                    ImageButton imageButton = imagebuttons[i];
+                    final ImageButton imageButton = imagebuttons[i];
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            listener.onEvSelected(hyundai_ioniq, hyundai_sonata);
+
+                            if (ev_selected == false)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setEnabled(true);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, hyundai_ioniq, hyundai_sonata);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, hyundai_ioniq, hyundai_sonata);
+                            }
                         }
                     });
 
@@ -233,12 +362,25 @@ public class SelectEV extends Fragment {
                     final EV kia_soul_ev = ev_array[i];
                     final GPV kia_soul_auto = gpv_array[ev_array[i].getId()];
 
-                    ImageButton imageButton = imagebuttons[i];
+                    final ImageButton imageButton = imagebuttons[i];
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            listener.onEvSelected(kia_soul_ev,kia_soul_auto);
+
+                            if (ev_selected == false)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setEnabled(true);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, kia_soul_ev, kia_soul_auto);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, kia_soul_ev, kia_soul_auto);
+                            }
                         }
                     });
 
@@ -255,12 +397,25 @@ public class SelectEV extends Fragment {
                     final EV mercedes_B250e = ev_array[i];
                     final GPV mercedes_GLA = gpv_array[ev_array[i].getId()];
 
-                    ImageButton imageButton = imagebuttons[i];
+                    final ImageButton imageButton = imagebuttons[i];
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            listener.onEvSelected(mercedes_B250e, mercedes_GLA);
+
+                            if (ev_selected == false)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setEnabled(true);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, mercedes_B250e, mercedes_GLA);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, mercedes_B250e, mercedes_GLA);
+                            }
                         }
                     });
 
@@ -276,12 +431,25 @@ public class SelectEV extends Fragment {
                     final EV mitsubishi_i_miev = ev_array[i];
                     final GPV mitsubishi_mirage = gpv_array[ev_array[i].getId()];
 
-                    ImageButton imageButton = imagebuttons[i];
+                    final ImageButton imageButton = imagebuttons[i];
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            listener.onEvSelected(mitsubishi_i_miev, mitsubishi_mirage);
+
+                            if (ev_selected == false)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setEnabled(true);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, mitsubishi_i_miev, mitsubishi_mirage);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, mitsubishi_i_miev, mitsubishi_mirage);
+                            }
                         }
                     });
 
@@ -298,12 +466,25 @@ public class SelectEV extends Fragment {
                     final EV nissan_leaf = ev_array[i];
                     final GPV vw_golf_gti = gpv_array[ev_array[i].getId()];
 
-                    ImageButton imageButton = imagebuttons[i];
+                    final ImageButton imageButton = imagebuttons[i];
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            listener.onEvSelected(nissan_leaf, vw_golf_gti);
+
+                            if (ev_selected == false)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setEnabled(true);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, nissan_leaf, vw_golf_gti);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, nissan_leaf, vw_golf_gti);
+                            }
                         }
                     });
 
@@ -319,12 +500,24 @@ public class SelectEV extends Fragment {
                     final EV smart_ev = ev_array[i];
                     final GPV smart_cabriolet = gpv_array[ev_array[i].getId()];
 
-                    ImageButton imageButton = imagebuttons[i];
+                    final ImageButton imageButton = imagebuttons[i];
 
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            listener.onEvSelected(smart_ev, smart_cabriolet);
+                            if (ev_selected == false)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setEnabled(true);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, smart_ev, smart_cabriolet);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, smart_ev, smart_cabriolet);
+                            }
                         }
                     });
 

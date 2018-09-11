@@ -7,6 +7,7 @@
     <dimen name="bottom_padding">5dp</dimen>
     <dimen name="top_padding">5dp</dimen>
     <dimen name="top_margin">5dp</dimen>
+    <dimen name="button_top_margin">20dp</dimen>
     <dimen name="start_margin">20dp</dimen>
     <dimen name="all_padding">7dp</dimen>
     <dimen name="left_padding">1dp</dimen>
