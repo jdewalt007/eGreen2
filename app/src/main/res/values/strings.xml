@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">e-Green2</string>
+    <string name="app_name">e-Green</string>
     <string name="action_settings">Settings</string>
     <string name="Daily_Com_Hint">Enter daily commute</string>
     <string name="An_Mil_Hint">Enter annual mileage</string>
@@ -54,6 +54,7 @@
 
 
     <string name="select_ev_continueButton">CONTINUE</string>
+    <string name="continue_button_error">Please Select An EV First</string>
 
 
 

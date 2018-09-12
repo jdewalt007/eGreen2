@@ -240,8 +240,8 @@ public class UserInfo extends Fragment {
     public  EV [] ev_array = null;
     public  GPV [] gpv_array = null;
     private  int car_pairs_total = 0;
-    private  double consumer_daily_commute = 50.2;  // no Consumer class/object created yet
-    private  int consumer_seat_capacity = 2;  // no Consumer class/object created yet
+    private  double consumer_daily_commute = 80.2;  // no Consumer class/object created yet
+    private  int consumer_seat_capacity = 4;  // no Consumer class/object created yet
 
 
 
@@ -291,7 +291,8 @@ public class UserInfo extends Fragment {
 
                 count += 1;
 
-                if ((ev_record.getCharge_range_lvl2()  > consumer_daily_commute)
+                if ((ev_record.getCharge_range_lvl2()  > consumer_daily_commute
+                        || (ev_record.getCharge_range_lvl2() == 102.6))
                         && (ev_record.getSeat_capacity() >= consumer_seat_capacity))
                 {
                     if (index == 0) {

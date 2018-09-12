@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class SelectEV extends Fragment {
@@ -30,13 +31,9 @@ public class SelectEV extends Fragment {
     private EV current_ev_selected;
     private GPV current_gpv_selected;
     private ImageButton current_image_button_selected;
-    private GradientDrawable drawable;
-    private GradientDrawable drawable2;
-    private GradientDrawable drawable3;
-
-
-
-
+    private GradientDrawable drawable, drawable2,
+                             drawable3, drawable4;
+    
 
 
     ImageButton imageButton1, imageButton2, imageButton3, imageButton4, imageButton5, imageButton6,
@@ -85,17 +82,27 @@ public class SelectEV extends Fragment {
         textView10 = (TextView) view.findViewById(R.id.textView10);
 
         select_ev_continueButton = (Button) view.findViewById(R.id.selectEVcontinueButton);
-        select_ev_continueButton.setEnabled(false);
-
 
 
 
         select_ev_continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                
+                if(ev_selected == false) {
 
-                select_ev_continueButton.setBackground(drawable3);
-                listener.onEvSelected(current_ev_selected, current_gpv_selected);
+                    Toast toast = Toast.makeText(getActivity(), R.string.continue_button_error, Toast.LENGTH_SHORT);
+                    View view1 = toast.getView();
+                    view1.setBackgroundResource(R.drawable.toast);
+                    TextView toastTextView  = (TextView) view1.findViewById(android.R.id.message);
+                    toastTextView.setTextColor(Color.BLACK);
+                    toast.show();
+                }
+                else {
+
+                       select_ev_continueButton.setBackground(drawable4);
+                       listener.onEvSelected(current_ev_selected, current_gpv_selected);
+                }
             }
         });
 
@@ -119,9 +126,6 @@ public class SelectEV extends Fragment {
         super.onDetach();
         listener = null;
     }
-
-
-
 
 
 
@@ -151,23 +155,29 @@ public class SelectEV extends Fragment {
 
 
 
-
+        // highlights current vehicle selected
         drawable = new GradientDrawable();
         drawable.setShape(GradientDrawable.RECTANGLE);
-        drawable.setStroke(6, Color.MAGENTA);
+        drawable.setStroke(10, Color.rgb(48,159,54));
         drawable.setColor(Color.BLACK);
 
+        // removes vehicle highlight when another vehicle selected
         drawable2 = new GradientDrawable();
         drawable2.setShape(GradientDrawable.RECTANGLE);
         drawable2.setStroke(6, Color.BLACK);
         drawable2.setColor(Color.BLACK);
 
+        // continue button border set to green when first vehicle selected
         drawable3 = new GradientDrawable();
         drawable3.setShape(GradientDrawable.RECTANGLE);
-        drawable3.setStroke(6, Color.MAGENTA);
+        drawable3.setStroke(6, Color.rgb(48,159,54));
         drawable3.setColor(Color.WHITE);
 
-
+        // continue button border set back to red after valid click
+        drawable4 = new GradientDrawable();
+        drawable4.setShape(GradientDrawable.RECTANGLE);
+        drawable4.setStroke(6, Color.rgb(200,00,00));
+        drawable4.setColor(Color.WHITE);
 
 
 
@@ -192,9 +202,8 @@ public class SelectEV extends Fragment {
                                 public void onClick(View v) {
 
                                     if (ev_selected == false)  {
-
                                         ev_selected = true;
-                                        select_ev_continueButton.setEnabled(true);
+                                        select_ev_continueButton.setBackground(drawable3);
                                         imageButton.setBackground(drawable);
                                         setCurrentEvGpvSelection(imageButton, bmw_i3, vw_beetle);
                                     }
@@ -230,7 +239,7 @@ public class SelectEV extends Fragment {
                                      if (ev_selected == false)  {
 
                                          ev_selected = true;
-                                         select_ev_continueButton.setEnabled(true);
+                                         select_ev_continueButton.setBackground(drawable3);
                                          imageButton.setBackground(drawable);
                                          setCurrentEvGpvSelection(imageButton, chevy_bolt, chevy_sonic);
                                      }
@@ -266,7 +275,7 @@ public class SelectEV extends Fragment {
                                      if (ev_selected == false)  {
 
                                          ev_selected = true;
-                                         select_ev_continueButton.setEnabled(true);
+                                         select_ev_continueButton.setBackground(drawable3);
                                          imageButton.setBackground(drawable);
                                          setCurrentEvGpvSelection(imageButton, fiat_500e, fiat_500);
                                      }
@@ -302,7 +311,7 @@ public class SelectEV extends Fragment {
                                      if (ev_selected == false)  {
 
                                          ev_selected = true;
-                                         select_ev_continueButton.setEnabled(true);
+                                         select_ev_continueButton.setBackground(drawable3);
                                          imageButton.setBackground(drawable);
                                          setCurrentEvGpvSelection(imageButton, ford_focus_ev, ford_focus_st);
                                      }
@@ -336,7 +345,7 @@ public class SelectEV extends Fragment {
                             if (ev_selected == false)  {
 
                                 ev_selected = true;
-                                select_ev_continueButton.setEnabled(true);
+                                select_ev_continueButton.setBackground(drawable3);
                                 imageButton.setBackground(drawable);
                                 setCurrentEvGpvSelection(imageButton, hyundai_ioniq, hyundai_sonata);
                             }
@@ -371,7 +380,7 @@ public class SelectEV extends Fragment {
                             if (ev_selected == false)  {
 
                                 ev_selected = true;
-                                select_ev_continueButton.setEnabled(true);
+                                select_ev_continueButton.setBackground(drawable3);
                                 imageButton.setBackground(drawable);
                                 setCurrentEvGpvSelection(imageButton, kia_soul_ev, kia_soul_auto);
                             }
@@ -406,7 +415,7 @@ public class SelectEV extends Fragment {
                             if (ev_selected == false)  {
 
                                 ev_selected = true;
-                                select_ev_continueButton.setEnabled(true);
+                                select_ev_continueButton.setBackground(drawable3);
                                 imageButton.setBackground(drawable);
                                 setCurrentEvGpvSelection(imageButton, mercedes_B250e, mercedes_GLA);
                             }
@@ -440,7 +449,7 @@ public class SelectEV extends Fragment {
                             if (ev_selected == false)  {
 
                                 ev_selected = true;
-                                select_ev_continueButton.setEnabled(true);
+                                select_ev_continueButton.setBackground(drawable3);
                                 imageButton.setBackground(drawable);
                                 setCurrentEvGpvSelection(imageButton, mitsubishi_i_miev, mitsubishi_mirage);
                             }
@@ -475,7 +484,7 @@ public class SelectEV extends Fragment {
                             if (ev_selected == false)  {
 
                                 ev_selected = true;
-                                select_ev_continueButton.setEnabled(true);
+                                select_ev_continueButton.setBackground(drawable3);
                                 imageButton.setBackground(drawable);
                                 setCurrentEvGpvSelection(imageButton, nissan_leaf, vw_golf_gti);
                             }
@@ -508,7 +517,7 @@ public class SelectEV extends Fragment {
                             if (ev_selected == false)  {
 
                                 ev_selected = true;
-                                select_ev_continueButton.setEnabled(true);
+                                select_ev_continueButton.setBackground(drawable3);
                                 imageButton.setBackground(drawable);
                                 setCurrentEvGpvSelection(imageButton, smart_ev, smart_cabriolet);
                             }
