@@ -1,211 +1,510 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
+    android:background="@android:color/background_light"
     android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="6dp"
     tools:context=".UserInfo">
 
-    <EditText
-        android:id="@+id/Daily_Commute"
+    <ImageView
+        android:id="@+id/e_GreenIcon"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="4dp"
-        android:hint="@string/Daily_Com_Hint"
-        android:inputType="number"
-        android:padding="6dp"/>
+        android:layout_height="170dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/bottom_margin"
+        android:layout_marginTop="0dp"
+        android:adjustViewBounds="true"
+        android:background="@android:color/background_light"
+        android:contentDescription="@string/eGreenIcon"
+        android:padding="4dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/e_green_icon1" />
 
-    <EditText
-        android:id="@+id/Annual_Mil"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Daily_Commute"
-        android:layout_marginBottom="4dp"
-        android:padding="6dp"
-        android:hint="@string/An_Mil_Hint"
-        android:inputType="number"/>
-
-
-    <TextView
-        android:id="@+id/Seating_Spin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/Annual_Mil"
-        android:layout_toLeftOf="@id/Seating_Num"
-        android:text="Seating" />
-
-    <android.support.v7.widget.AppCompatSpinner
-        android:id="@+id/Seating_Num"
-        android:layout_width="283dp"
-        android:layout_height="43dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/Annual_Mil"
-        android:layout_marginBottom="4dp"
-        android:padding="6dp"
-        android:spinnerMode="dropdown"
-        android:entries="@array/Seating_Number"
+        android:layout_height="match_parent"
+        android:background="@drawable/image_border5"
+        android:padding="4dp"
         android:visibility="visible">
 
-    </android.support.v7.widget.AppCompatSpinner>
+        <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:visibility="visible"
+            tools:context=".UserInfo">
 
-    <EditText
-        android:id="@+id/Monthly_Inc"
-        android:layout_below="@id/Seating_Num"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginBottom="4dp"
-        android:padding="6dp"
-        android:hint="@string/Month_Inc_hint"
-        />
-
-    <EditText
-        android:id="@+id/Down_Payment"
-        android:layout_below="@id/Monthly_Inc"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_marginBottom="4dp"
-        android:hint="@string/Down_Paym_Hint"
-        android:padding="6dp" />
+            <TextView
+                android:id="@+id/dailyCommuteLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="0"
+                android:padding="6dp"
+                android:text="@string/miles_daily"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:textStyle="normal" />
 
 
-    <TextView
-        android:id="@+id/Term_Numb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/Down_Payment"
-        android:text="Terms" />
+            <EditText
+                android:id="@+id/dailyCommuteEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="0"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/commute_editText"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="6dp" />
 
-    <android.support.v7.widget.AppCompatSpinner
-        android:id="@+id/Terms"
-        android:layout_width="274dp"
-        android:layout_height="43dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/Down_Payment"
-        android:layout_centerVertical="true"
-        android:layout_marginBottom="4dp"
-        android:padding="4dp"
-        android:spinnerMode="dropdown"
-        android:entries="@array/Terms_length"
-        android:visibility="visible">
 
-    </android.support.v7.widget.AppCompatSpinner>
+            <TextView
+                android:id="@+id/dailyCommuteTextView"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="0"
+                android:background="@color/textFieldColor"
+                android:hint="@string/Daily_Com_Hint"
+                android:padding="6dp"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/Charg_Avail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Terms"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:padding="4dp"
-        android:text="Charging Availability" />
+            <TextView
+                android:id="@+id/annualMilesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="1"
+                android:padding="6dp"
+                android:text="@string/annual_miles"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:textStyle="normal" />
 
-    <TextView
-        android:id="@+id/public_Charg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/Charg_Avail"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:padding="4dp"
-        android:text="Public" />
+            <EditText
+                android:id="@+id/annualMilesEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="1"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/commute_editText"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="6dp" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/public_Charg"
-        android:layout_marginEnd="39dp"
-        android:text="No"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="39dp" />
+            <TextView
+                android:id="@+id/annualMilesTextView"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="1"
+                android:background="@color/textFieldColor"
+                android:hint="@string/An_Mil_Hint"
+                android:padding="6dp"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light"
+                android:textStyle="bold" />
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/checkBox"
-        android:layout_below="@+id/public_Charg"
-        android:layout_marginTop="-4dp"
-        android:text="No"
-        android:layout_alignLeft="@+id/checkBox" />
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Terms"
-        android:layout_below="@+id/public_Charg"
-        android:layout_marginTop="-4dp"
-        android:text="Yes"
-        android:layout_alignLeft="@+id/Terms" />
+            <TextView
+                android:id="@+id/seatinSpinLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="2"
+                android:padding="6dp"
+                android:text="@string/Seating"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:visibility="visible" />
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/Terms"
-        android:layout_alignTop="@+id/public_Charg"
-        android:text="Yes"
-        android:layout_alignLeft="@+id/Terms" />
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/Seating_Num"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="2"
+                android:entries="@array/Seating_Number"
+                android:padding="6dp"
+                android:spinnerMode="dropdown"
+                android:visibility="visible">
 
-    <TextView
-        android:id="@+id/work_Charg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/public_Charg"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:padding="4dp"
-        android:text="Work" />
+            </android.support.v7.widget.AppCompatSpinner>
 
-    <TextView
-        android:id="@+id/Home_Charg_Opt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/work_Charg"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_toLeftOf="@id/Home_Charg"
-        android:lines="1"
-        android:padding="4dp"
-        android:text="Home" />
+            <TextView
+                android:id="@+id/monthlyIncomeLabel"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="3"
+                android:paddingBottom="6dp"
+                android:paddingEnd="2dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="2dp"
+                android:paddingStart="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/monthly_income"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:textStyle="normal" />
 
-    <android.support.v7.widget.AppCompatSpinner
-        android:id="@+id/Home_Charg"
-        android:layout_width="274dp"
-        android:layout_height="43dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/work_Charg"
-        android:layout_marginTop="4dp"
-        android:padding="4dp"
-        android:spinnerMode="dropdown"
-        android:entries="@array/Home_Charg_Opt"
-        android:visibility="visible">
+            <EditText
+                android:id="@+id/monthlyIncomeEditText"
+                android:layout_width="230dp"
+                android:layout_height="43dp"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="15dp"
+                android:layout_row="3"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/income_editText"
+                android:inputType="number"
+                android:maxLength="7"
+                android:padding="6dp"
+                android:visibility="visible" />
 
-    </android.support.v7.widget.AppCompatSpinner>
+            <TextView
+                android:id="@+id/monthlyIncomeTextView"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="15dp"
+                android:layout_row="3"
+                android:background="@color/textFieldColor"
+                android:hint="@string/Month_Inc_hint"
+                android:padding="6dp"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light"
+                android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/continueButton"
-        android:layout_width="match_parent"
-        android:layout_height="43dp"
-        android:layout_below="@id/Home_Charg"
-        android:padding="4dp"
-        android:text="Continue" />
+            <TextView
+                android:id="@+id/downPaymentLabel"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="4"
+                android:paddingBottom="6dp"
+                android:paddingEnd="2dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="2dp"
+                android:paddingStart="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/down_payment"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:textStyle="normal" />
 
-</RelativeLayout>
+            <EditText
+                android:id="@+id/downPaymentEditText"
+                android:layout_width="230dp"
+                android:layout_height="43dp"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="15dp"
+                android:layout_row="4"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/payment_editText"
+                android:inputType="number"
+                android:maxLength="7"
+                android:padding="6dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/downPaymentTextView"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="15dp"
+                android:layout_row="4"
+                android:background="@color/textFieldColor"
+                android:hint="@string/Down_Paym_Hint"
+                android:padding="6dp"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:id="@+id/interestRateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:padding="6dp"
+                android:layout_row="5"
+                android:text="@string/int_rate"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:textStyle="normal" />
+
+
+            <EditText
+                android:id="@+id/interestRateEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="5"
+                android:digits="0123456789"
+                android:ems="10"
+                android:hint="@string/Interest_editText"
+                android:inputType="number"
+                android:maxLength="4"
+                android:padding="6dp"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/interestRateTextView"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="5"
+                android:background="@color/textFieldColor"
+                android:hint="@string/int_rate_hint"
+                android:padding="6dp"
+                android:textColor="@android:color/background_light"
+                android:textColorHint="@android:color/background_light"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/monthsFinancedLabel"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="6"
+                android:paddingBottom="6dp"
+                android:paddingEnd="2dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="2dp"
+                android:paddingStart="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/months_financed"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:textStyle="normal" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/Months_Financed"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="6"
+                android:entries="@array/Months_Financed"
+                android:padding="6dp"
+                android:spinnerMode="dropdown"
+                android:visibility="visible">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+
+            <TextView
+                android:id="@+id/Charg_Avail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="7"
+                android:paddingBottom="6dp"
+                android:paddingEnd="2dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="2dp"
+                android:paddingStart="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/ChargingAvailability"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/medium_font_size"
+                android:textStyle="normal" />
+
+
+            <TextView
+                android:id="@+id/public_Charg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="8"
+                android:padding="6dp"
+                android:text="@string/where"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:visibility="visible"
+                android:textStyle="normal" />
+
+
+
+
+            <CheckBox
+                android:id="@+id/publicChargAvailCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_row="8"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:padding="6dp"
+                android:visibility="visible" />
+
+
+
+            <TextView
+                android:id="@+id/work_Charg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="9"
+                android:padding="6dp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:text="@string/Location2"
+                android:visibility="visible"
+                android:textStyle="normal" />
+
+
+            <CheckBox
+                android:id="@+id/workChargAvailCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="1"
+                android:layout_row="9"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:padding="6dp"
+                android:visibility="visible" />
+
+
+            <TextView
+                android:id="@+id/Home_Charg_Opt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_columnSpan="1"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="10"
+                android:paddingBottom="6dp"
+                android:paddingEnd="2dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="2dp"
+                android:paddingStart="6dp"
+                android:paddingTop="6dp"
+                android:text="@string/location"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/font_size"
+                android:visibility="visible"
+                android:textStyle="normal" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/Home_Charg"
+                android:layout_width="215dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_columnSpan="2"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="5dp"
+                android:layout_row="10"
+                android:entries="@array/Home_Charg_Opt"
+                android:padding="6dp"
+                android:spinnerMode="dropdown"
+                android:visibility="visible">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+
+
+            <Button
+                android:id="@+id/UserContinuebutton"
+                android:layout_width="145dp"
+                android:layout_height="wrap_content"
+                android:layout_row="11"
+                android:layout_column="0"
+                android:layout_columnSpan="3"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/user_button_top_margin"
+                android:background="@drawable/image_border3"
+                android:text="@string/select_ev_continueButton"
+                android:textColor="@android:color/black"
+                android:visibility="visible" />
+
+
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>

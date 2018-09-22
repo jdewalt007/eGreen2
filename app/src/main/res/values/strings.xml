@@ -1,10 +1,33 @@
 <resources>
-    <string name="app_name">e-Green</string>
+    <string name="app_name">eGreen</string>
     <string name="action_settings">Settings</string>
     <string name="Daily_Com_Hint">Enter daily commute</string>
     <string name="An_Mil_Hint">Enter annual mileage</string>
+    <string name="commute_editText">Commute EditText</string>
     <string name="Month_Inc_hint">Enter monthly income</string>
+    <string name="income_editText">Income EditText</string>
+    <string name="payment_editText">Payment EditText</string>
     <string name="Down_Paym_Hint">Enter down payment</string>
+    <string name="Interest_editText">Interest EditText</string>
+    <string name="int_rate_hint">Enter interest rate</string>
+    <string name="Seating">Seating</string>
+    <string name="months_financed"># Months Financed</string>
+    <string name="ChargingAvailability">Charging Availability</string>
+    <string name="where">Public</string>
+    <string name="location">Home</string>
+    <string name="Location2">Work</string>
+    <string name="Button">Continue</string>
+    <string name="eGreenIcon">eGreen Icon</string>
+    <string name="miles_daily">Daily Miles</string>
+    <string name="annual_miles">Annual Miles</string>
+    <string name="monthly_income">Monthly Income</string>
+    <string name="down_payment">Down Payment</string>
+    <string name="int_rate">Interest Rate</string>
+
+
+
+
+
 
 
     <string name="select_EV">SELECT AN EV</string>
@@ -53,8 +76,18 @@
 
 
 
+
+    <string name="user_info_continueButton">CONTINUE</string>
+    <string name="user_continue_button_error">DATA INPUT INCOMPLETE</string>
+
     <string name="select_ev_continueButton">CONTINUE</string>
-    <string name="continue_button_error">Please Select An EV First</string>
+    <string name="ev_continue_button_error">Please Select An EV First</string>
+
+    <string name="missing_data_input">SELECTION(S)/DATA FIELD(S) INCOMPLETE</string>
+    <string name= "no_cars_meet_criteria">NO EV MET YOUR DAILY COMMUTE/PASSENGER REQUIREMENTS.
+                                          PLEASE REVISE INPUTS</string>
+
+
 
 
 

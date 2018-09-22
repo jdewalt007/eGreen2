@@ -89,9 +89,9 @@ public class SelectEV extends Fragment {
             @Override
             public void onClick(View v) {
                 
-                if(ev_selected == false) {
+                if(!ev_selected) {
 
-                    Toast toast = Toast.makeText(getActivity(), R.string.continue_button_error, Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getActivity(), R.string.ev_continue_button_error, Toast.LENGTH_SHORT);
                     View view1 = toast.getView();
                     view1.setBackgroundResource(R.drawable.toast);
                     TextView toastTextView  = (TextView) view1.findViewById(android.R.id.message);
@@ -201,7 +201,7 @@ public class SelectEV extends Fragment {
                                 @Override
                                 public void onClick(View v) {
 
-                                    if (ev_selected == false)  {
+                                    if (!ev_selected)  {
                                         ev_selected = true;
                                         select_ev_continueButton.setBackground(drawable3);
                                         imageButton.setBackground(drawable);
@@ -236,7 +236,7 @@ public class SelectEV extends Fragment {
                                  @Override
                                  public void onClick(View v) {
 
-                                     if (ev_selected == false)  {
+                                     if (!ev_selected)  {
 
                                          ev_selected = true;
                                          select_ev_continueButton.setBackground(drawable3);
@@ -272,7 +272,7 @@ public class SelectEV extends Fragment {
                                  @Override
                                  public void onClick(View v) {
 
-                                     if (ev_selected == false)  {
+                                     if (!ev_selected)  {
 
                                          ev_selected = true;
                                          select_ev_continueButton.setBackground(drawable3);
@@ -308,7 +308,7 @@ public class SelectEV extends Fragment {
                                  @Override
                                  public void onClick(View v) {
 
-                                     if (ev_selected == false)  {
+                                     if (!ev_selected)  {
 
                                          ev_selected = true;
                                          select_ev_continueButton.setBackground(drawable3);
@@ -342,7 +342,7 @@ public class SelectEV extends Fragment {
                         @Override
                         public void onClick(View v) {
 
-                            if (ev_selected == false)  {
+                            if (!ev_selected)  {
 
                                 ev_selected = true;
                                 select_ev_continueButton.setBackground(drawable3);
@@ -377,7 +377,7 @@ public class SelectEV extends Fragment {
                         @Override
                         public void onClick(View v) {
 
-                            if (ev_selected == false)  {
+                            if (!ev_selected)  {
 
                                 ev_selected = true;
                                 select_ev_continueButton.setBackground(drawable3);
@@ -412,7 +412,7 @@ public class SelectEV extends Fragment {
                         @Override
                         public void onClick(View v) {
 
-                            if (ev_selected == false)  {
+                            if (!ev_selected)  {
 
                                 ev_selected = true;
                                 select_ev_continueButton.setBackground(drawable3);
@@ -446,7 +446,7 @@ public class SelectEV extends Fragment {
                         @Override
                         public void onClick(View v) {
 
-                            if (ev_selected == false)  {
+                            if (!ev_selected)  {
 
                                 ev_selected = true;
                                 select_ev_continueButton.setBackground(drawable3);
@@ -481,7 +481,7 @@ public class SelectEV extends Fragment {
                         @Override
                         public void onClick(View v) {
 
-                            if (ev_selected == false)  {
+                            if (!ev_selected)  {
 
                                 ev_selected = true;
                                 select_ev_continueButton.setBackground(drawable3);
@@ -514,7 +514,7 @@ public class SelectEV extends Fragment {
                     imageButton.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (ev_selected == false)  {
+                            if (!ev_selected)  {
 
                                 ev_selected = true;
                                 select_ev_continueButton.setBackground(drawable3);

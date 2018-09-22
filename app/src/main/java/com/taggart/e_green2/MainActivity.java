@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     private FragmentManager fm;
     private EV ev_selected;
     private GPV gpv_paired;
+    private ConsumerInfo consumer;
 
 
     @Override
@@ -60,8 +61,9 @@ public class MainActivity extends AppCompatActivity
 
 
     @Override
-    public void onSearchComplete(int car_pairs) {
+    public void onSearchComplete(int car_pairs, ConsumerInfo passed_consumer) {
         car_pairs_total = car_pairs;
+        consumer = passed_consumer;
         if (findViewById(R.id.fragmentContainer) != null) // phone
             passEVs(R.id.fragmentContainer);
     }

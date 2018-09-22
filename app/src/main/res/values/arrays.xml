@@ -3,10 +3,11 @@
     <string-array name="Seating_Number">
         <item>...</item>
         <item>2</item>
+        <item>4</item>
         <item>5</item>
         <item>7</item>
     </string-array>
-    <string-array name="Terms_length">
+    <string-array name="Months_Financed">
         <item>...</item>
         <item>24</item>
         <item>36</item>
