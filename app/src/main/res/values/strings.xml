@@ -10,7 +10,7 @@
     <string name="Down_Paym_Hint">Enter down payment</string>
     <string name="Interest_editText">Interest EditText</string>
     <string name="int_rate_hint">Enter interest rate</string>
-    <string name="Seating">Seating</string>
+    <string name="Seating">Minimum Seating</string>
     <string name="months_financed"># Months Financed</string>
     <string name="ChargingAvailability">Charging Availability</string>
     <string name="where">Public</string>
@@ -31,6 +31,7 @@
 
 
     <string name="select_EV">SELECT AN EV</string>
+
     <string name="BMW_i3_EV">2017 BMW-i3</string>
     <string name="Chevy_Bolt_EV">2017 Chevy Bolt</string>
     <string name="ford_focus_ev">2017 Ford Focus EV</string>
@@ -41,6 +42,20 @@
     <string name="Mitsubishi_i_MiEV">2017 Mitsubishi i-MiEV</string>
     <string name="Nissan_Leaf">2017 Nissan Leaf</string>
     <string name="Smart_EV">2017 Smart EV</string>
+    <string name="Volkswagen_E_Golf">2017 VW E-Golf</string>
+    <string name="Tesla_S_60">2017 Tesla S-60</string>
+    <string name="Tesla_S_60D">2017 Tesla S-60D</string>
+    <string name="Tesla_S_75">2017 Tesla S-75</string>
+    <string name="Tesla_S_75D">2017 Tesla S-75D</string>
+    <string name="Tesla_S_90D">2017 Tesla S-90D</string>
+    <string name="Tesla_S_P100D">2017 Tesla S-P100D</string>
+    <string name="Tesla_S_100D">2017 Tesla S-100D</string>
+    <string name="Tesla_X_75D">2017 Tesla X-75D</string>
+    <string name="Tesla_X_90D">2017 Tesla X-90D</string>
+    <string name="Tesla_X_100D">2017 Tesla X-100D</string>
+    <string name="Tesla_X_P100D">2017 Tesla X-P100D</string>
+
+
 
 
     <string name="first_ev_imageB">First EV Image</string>
@@ -73,7 +88,41 @@
     <string name="tenth_ev_imageB">Tenth EV Image</string>
     <string name="tenth_ev_textV">Tenth EV textView</string>
 
+    <string name="eleventh_ev_imageB">Eleventh EV Image</string>
+    <string name="eleventh_ev_textV">Eleventh EV textView</string>
 
+    <string name="twelfth_ev_imageB">Twelfth EV Image</string>
+    <string name="twelfth_ev_textV">Twelfth EV textView</string>
+
+    <string name="thirteenth_ev_imageB">Thirteenth EV Image</string>
+    <string name="thirteenth_ev_textV">Thirteenth EV textView</string>
+
+    <string name="fourteenth_ev_imageB">Fourteenth EV Image</string>
+    <string name="fourteenth_ev_textV">Fourteenth EV textView</string>
+
+    <string name="fifteenth_ev_imageB">Fifteenth EV Image</string>
+    <string name="fifteenth_ev_textV">Fifteenth EV textView</string>
+
+    <string name="sixteenth_ev_imageB">Sixteenth EV Image</string>
+    <string name="sixteenth_ev_textV">Sixteenth EV textView</string>
+
+    <string name="seventeenth_ev_imageB">Seventeenth EV Image</string>
+    <string name="seventeenth_ev_textV">Seventeenth EV textView</string>
+
+    <string name="eighteenth_ev_imageB">Eighteenth EV Image</string>
+    <string name="eighteenth_ev_textV">Eighteenth EV textView</string>
+
+    <string name="nineteenth_ev_imageB">Nineteenth EV Image</string>
+    <string name="nineteenth_ev_textV">Nineteenth EV textView</string>
+
+    <string name="twentieth_ev_imageB">Twentieth EV Image</string>
+    <string name="twentieth_ev_textV">Twentieth EV textView</string>
+
+    <string name="twenty_first_ev_imageB">Twenty First EV Image</string>
+    <string name="twenty_first_ev_textV">Twenty First EV textView</string>
+
+    <string name="twenty_second_ev_imageB">Twenty Second EV Image</string>
+    <string name="twenty_second_ev_textV">Twenty Second EV textView</string>
 
 
 
@@ -84,11 +133,8 @@
     <string name="ev_continue_button_error">Please Select An EV First</string>
 
     <string name="missing_data_input">SELECTION(S)/DATA FIELD(S) INCOMPLETE</string>
-    <string name= "no_cars_meet_criteria">NO EV MET YOUR DAILY COMMUTE/PASSENGER REQUIREMENTS.
+    <string name= "no_cars_meet_criteria">NO EV MET YOUR DAILY COMMUTE/SEATING REQUIREMENTS.
                                           PLEASE REVISE INPUTS</string>
-
-
-
 
 
 </resources>

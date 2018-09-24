@@ -80,6 +80,33 @@ public class SelectEV extends Fragment {
         textView9 = (TextView) view.findViewById(R.id.textView9);
         imageButton10 = (ImageButton) view.findViewById(R.id.imageButton10);
         textView10 = (TextView) view.findViewById(R.id.textView10);
+        imageButton11 = (ImageButton) view.findViewById(R.id.imageButton11);
+        textView11 = (TextView) view.findViewById(R.id.textView11);
+        imageButton12 = (ImageButton) view.findViewById(R.id.imageButton12);
+        textView12 = (TextView) view.findViewById(R.id.textView12);
+        imageButton13 = (ImageButton) view.findViewById(R.id.imageButton13);
+        textView13 = (TextView) view.findViewById(R.id.textView13);
+        imageButton14 = (ImageButton) view.findViewById(R.id.imageButton14);
+        textView14 = (TextView) view.findViewById(R.id.textView14);
+        imageButton15 = (ImageButton) view.findViewById(R.id.imageButton15);
+        textView15 = (TextView) view.findViewById(R.id.textView15);
+        imageButton16 = (ImageButton) view.findViewById(R.id.imageButton16);
+        textView16 = (TextView) view.findViewById(R.id.textView16);
+        imageButton17 = (ImageButton) view.findViewById(R.id.imageButton17);
+        textView17 = (TextView) view.findViewById(R.id.textView17);
+        imageButton18 = (ImageButton) view.findViewById(R.id.imageButton18);
+        textView18 = (TextView) view.findViewById(R.id.textView18);
+        imageButton19 = (ImageButton) view.findViewById(R.id.imageButton19);
+        textView19 = (TextView) view.findViewById(R.id.textView19);
+        imageButton20 = (ImageButton) view.findViewById(R.id.imageButton20);
+        textView20 = (TextView) view.findViewById(R.id.textView20);
+        imageButton21 = (ImageButton) view.findViewById(R.id.imageButton21);
+        textView21 = (TextView) view.findViewById(R.id.textView21);
+        imageButton22 = (ImageButton) view.findViewById(R.id.imageButton22);
+        textView22 = (TextView) view.findViewById(R.id.textView22);
+
+
+
 
         select_ev_continueButton = (Button) view.findViewById(R.id.selectEVcontinueButton);
 
@@ -144,12 +171,16 @@ public class SelectEV extends Fragment {
     public void displayEVs(EV [] ev_array, int car_pairs_total, GPV [] gpv_array) {
 
         ImageButton [] imagebuttons = {imageButton1, imageButton2,imageButton3, imageButton4,
-        imageButton5, imageButton6, imageButton7, imageButton8, imageButton9, imageButton10};
+        imageButton5, imageButton6, imageButton7, imageButton8, imageButton9, imageButton10,
+        imageButton11, imageButton12, imageButton13, imageButton14, imageButton15, imageButton16,
+        imageButton17, imageButton18, imageButton19, imageButton20, imageButton21, imageButton22};
 
 
 
         TextView [] textviews = {textView1, textView2, textView3, textView4, textView5, textView6,
-        textView7, textView8, textView9, textView10};
+        textView7, textView8, textView9, textView10, textView11, textView12, textView13, textView14,
+        textView15, textView16, textView17, textView18, textView19, textView20, textView21,
+        textView22};
 
 
 
@@ -533,16 +564,409 @@ public class SelectEV extends Fragment {
                     continue;
                 }
 
+                case 10: {
+                    imagebuttons[i].setImageResource(R.drawable.volkswagen_e_golf);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Volkswagen_E_Golf);
+                    textviews[i].setVisibility(View.VISIBLE);
 
-                default:
-                            continue;
+                    final EV vw_e_golf = ev_array[i];
+                    final GPV vw_golf_gti_s_dsg = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, vw_e_golf, vw_golf_gti_s_dsg);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, vw_e_golf, vw_golf_gti_s_dsg);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 11: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_60);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_60);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_s_60 = ev_array[i];
+                    final GPV audi_a7 = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_60, audi_a7);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_60,audi_a7);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 12: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_60d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_60D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_s_60d = ev_array[i];
+                    final GPV mercedes_amg_c63s = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_60d, mercedes_amg_c63s);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_60d, mercedes_amg_c63s);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
 
 
-            }
+                case 13: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_75);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_75);
+                    textviews[i].setVisibility(View.VISIBLE);
 
-        }
-    }
+                    final EV tesla_s_75 = ev_array[i];
+                    final GPV jaguar_xj = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_75, jaguar_xj);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_75, jaguar_xj);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 14: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_75d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_75D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_s_75d = ev_array[i];
+                    final GPV audi_s7 = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_75d, audi_s7);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_75d, audi_s7);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 15: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_90d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_90D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_s_90d = ev_array[i];
+                    final GPV audi_a8 = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_90d, audi_a8);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_90d, audi_a8);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 16: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_p100d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_P100D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_s_p100d = ev_array[i];
+                    final GPV audi_s8 = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_p100d, audi_s8);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_p100d, audi_s8);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 17: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_s_100d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_S_100D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_s_100d = ev_array[i];
+                    final GPV audi_a8 = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_100d, audi_a8);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_s_100d, audi_a8);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 18: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_x_75d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_X_75D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_x_75d = ev_array[i];
+                    final GPV lr_range_rover_3l = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_75d, lr_range_rover_3l);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_75d, lr_range_rover_3l);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 19: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_x_90d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_X_90D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_x_90d = ev_array[i];
+                    final GPV lr_range_rover_sport = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_90d, lr_range_rover_sport);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_90d, lr_range_rover_sport);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 20: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_x_100d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_X_100D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_x_100d = ev_array[i];
+                    final GPV bmw_x6_m = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_100d, bmw_x6_m);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_100d, bmw_x6_m);
+                            }
+                        }
+                    });
+
+                    continue;
+                }
+
+                case 21: {
+                    imagebuttons[i].setImageResource(R.drawable.tesla_x_p100d);
+                    imagebuttons[i].setVisibility(View.VISIBLE);
+                    textviews[i].setText(R.string.Tesla_X_P100D);
+                    textviews[i].setVisibility(View.VISIBLE);
+
+                    final EV tesla_x_p100d = ev_array[i];
+                    final GPV lr_autob_swb = gpv_array[ev_array[i].getId()];
+
+                    final ImageButton imageButton = imagebuttons[i];
+
+                    imageButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!ev_selected)  {
+
+                                ev_selected = true;
+                                select_ev_continueButton.setBackground(drawable3);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_p100d, lr_autob_swb);
+                            }
+                            else {
+
+                                current_image_button_selected.setBackground(drawable2);
+                                imageButton.setBackground(drawable);
+                                setCurrentEvGpvSelection(imageButton, tesla_x_p100d, lr_autob_swb);
+                            }
+                        }
+                    });
+
+                    continue;
+
+                }   // end case 21
+
+            }  // end switch
+
+        }  // end for loop
+    }  // end method displayEVs
 
 
-}
+}  // end SelectEV fragment
 

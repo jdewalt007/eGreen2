@@ -385,25 +385,30 @@ public class UserInfo extends Fragment  {
 
                 case R.id.Home_Charg: {
 
-
                     String charge1 = "level 1";
                     String charge2 = "level 2";
 
-                    if (parent.getItemAtPosition(position).toString().equals(charge1))
-                    {
-                        ConsumerInformation.setHome_Charg_Avail(true);
-                        home_charge_selection = charge1;
-                        break;
+                    home_charge_selection = parent.getItemAtPosition(position).toString();
+                    String y = "...";
 
-                    }
+                    if (!home_charge_selection.equals(y)) {
 
-                   else if (parent.getItemAtPosition(position).toString().equals(charge2))
 
-                    {
-                        ConsumerInformation.setHome_Charg_Avail2(true);
-                        home_charge_selection = charge2;
-                        break;
+                        if (parent.getItemAtPosition(position).toString().equals(charge1)) {
+                            ConsumerInformation.setHome_Charg_Avail(true);
+                            ConsumerInformation.setHome_Charg_Avail2(false);
+                            home_charge_selection = charge1;
+                            break;
 
+                        } else if (parent.getItemAtPosition(position).toString().equals(charge2))
+
+                        {
+                            ConsumerInformation.setHome_Charg_Avail2(true);
+                            ConsumerInformation.setHome_Charg_Avail(false);
+                            home_charge_selection = charge2;
+                            break;
+
+                        }
                     }
 
                 }
@@ -468,7 +473,7 @@ public class UserInfo extends Fragment  {
                     view1.setBackgroundResource(R.drawable.toast);
                     TextView toastTextView  = (TextView) view1.findViewById(android.R.id.message);
                     toastTextView.setTextColor(Color.BLACK);
-                    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 25);
+                    toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 20);
                     toast.show();
                 }
                 else {
