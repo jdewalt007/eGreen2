@@ -411,6 +411,9 @@ public class UserInfo extends Fragment  {
                         }
                     }
 
+                    break;
+
+
                 }
 
                 case R.id.Months_Financed:  {
